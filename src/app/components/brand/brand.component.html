@@ -1,6 +1,32 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
 </div>
-<ul *ngIf="dataLoaded==true" class="list-group list-group-flush m-4">
-  <h3 style="font-weight: 700; color:darkcyan">Brands</h3>
-  <li class="list-group-item" *ngFor="let brand of brands">{{brand.name}}</li>
-</ul>
+<div class="row" *ngIf="brands.length>0">
+  <ul *ngIf="dataLoaded==true" class="list-group list-group-flush m-4">
+    <h3 style="font-weight: 700; color:darkcyan">Brands</h3>
+    <li class="list-group-item" routerLink="/Brands/Cars/{{brand.id}}" *ngFor="let brand of brands">{{brand.name}} -
+      {{brand.model}}</li>
+  </ul>
+</div>
+<div class="row" *ngIf="cars.length>0">
+  <h3 style="font-weight: 700; color:darkcyan">Brand Name: {{cars[0].brandName}}</h3>
+  <table *ngIf="dataLoaded==true" class="table m-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">colorName</th>
+        <th scope="col">modelYear</th>
+        <th scope="col">dailyPrice</th>
+        <th scope="col">description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <th scope="row">{{car.id}}</th>
+        <td>{{car.colorName}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice}}</td>
+        <td>{{car.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

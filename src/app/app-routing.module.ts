@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'Colors', component: ColorComponent},
   {path: 'Rentals', component: RentalComponent},
   {path: 'Customers', component: CustomerComponent},
+  {path: 'Brands/Cars/:brandId', component: BrandComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 
