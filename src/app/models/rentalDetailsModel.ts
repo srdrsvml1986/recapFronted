@@ -3,6 +3,6 @@ export interface RentalDetailsModel{
     userName: string;
     brandName: string;
     companyName: string;
-    rentDate: Date;
+    date: Date;
     returnDate: Date;
 }

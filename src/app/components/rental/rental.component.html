@@ -15,7 +15,7 @@
         <th scope="row">{{rental.id}}</th>
         <td>{{rental.userName}}</td>
         <td>{{rental.brandName}}</td>
-        <td>{{rental.rentDate | date:'dd-MM-YYYY'}}</td>
+        <td>{{rental.date | date:'dd-MM-YYYY'}}</td>
         <td>{{(rental.returnDate == null)? "Not yet delivered!": rental.returnDate | date:'dd-MM-YYYY'}}</td>
       </tr>
     </tbody>
