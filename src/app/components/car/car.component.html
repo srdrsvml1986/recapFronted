@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let car of cars">
+      <tr *ngFor="let car of cars" routerLink="/Cars/{{car.id}}">
         <th scope="row">{{car.id}}</th>
         <td>{{car.brandName}}</td>
         <td>{{car.colorName}}</td>

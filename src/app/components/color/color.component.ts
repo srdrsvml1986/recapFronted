@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CarDetails } from 'src/app/models/carDetailsModel';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -9,18 +11,33 @@ import { ColorService } from 'src/app/services/color.service';
 })
 
 export class ColorComponent implements OnInit {
-  colors:Color[] = [];
+  colors: Color[] = [];
+  cars: CarDetails[] = [];
   dataLoaded = false;
-  constructor(private colorService:ColorService) { }
+  constructor(private colorService: ColorService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getColors();
+    this.activatedRoute.params.subscribe((params) => {
+      if (params.colorId) {
+        this.getCars(params.colorId);
+        this.colors = [];
+      }else{
+        this.getColors();
+        this.cars = [];
+      }
+  });
   }
-  
+
   getColors() {
     this.colorService.getColors().subscribe(response => {
        this.colors = response.data,
        this.dataLoaded = true;
-    })
+    });
+  }
+  getCars(colorId: number){
+    this.colorService.getCarsByColorId(colorId).subscribe(response => {
+      this.cars = response.data;
+      this.dataLoaded = true;
+    });
   }
 }

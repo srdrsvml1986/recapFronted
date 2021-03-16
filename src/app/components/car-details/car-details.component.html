@@ -1,0 +1,39 @@
+<div class="row" *ngIf="car.carImages" class="slider">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div *ngIf="car.carImages" class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://localhost:44373/Uploads/Images/{{car.carImages[0].imagePath}}" class="d-block w-100"
+          alt="{{car.description}} Image">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div *ngFor="let image of car.carImages; let i = index;" class="carousel-item" data-bs-interval="10000">
+        <img src="https://localhost:44373/Uploads/Images/{{image.imagePath}}" class="d-block w-100"
+          alt="{{car.description}} Image">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Marka: {{car.brand.name}}</li>
+      <li class="list-group-item">Renk: {{car.color.name}}</li>
+      <li class="list-group-item">Model Yılı: {{car.modelYear}}</li>
+      <li class="list-group-item">Fiyat: {{car.dailyPrice}} Türk Lirası</li>
+    </ul>
+  </div>
+</div>

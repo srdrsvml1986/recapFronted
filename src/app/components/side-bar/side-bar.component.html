@@ -1,17 +1,8 @@
 <ul class="list-group">
-    <li (click)="setSelectedItem(1)"     
-     [class]="getSelectedItemClass(1)" 
-     routerLink="">Brands</li>
-    <li (click)="setSelectedItem(2)"     
-    [class]="getSelectedItemClass(2)" 
-    routerLink="/Cars">Cars</li>
-    <li (click)="setSelectedItem(3)"     
-    [class]="getSelectedItemClass(3)" 
-    routerLink="/Customers">Customers</li>
-    <li (click)="setSelectedItem(4)"     
-    [class]="getSelectedItemClass(4)" 
-    routerLink="/Rentals">Rentals</li>
-    <li (click)="setSelectedItem(5)"     
-    [class]="getSelectedItemClass(5)" 
-    routerLink="/Colors">Colors</li>
-  </ul>
+  <li class="list-group-item" routerLink="">Main Page</li>
+  <li routerLinkActive="active" class="list-group-item" routerLink="/Brands">Brands</li>
+  <li routerLinkActive="active" class="list-group-item" routerLink="/Colors">Colors</li>
+  <li routerLinkActive="active" class="list-group-item" routerLink="/Cars">Cars</li>
+  <li routerLinkActive="active" class="list-group-item" routerLink="/Rentals">Rentals</li>
+  <li routerLinkActive="active" class="list-group-item" routerLink="/Customers">Customers</li>
+</ul>

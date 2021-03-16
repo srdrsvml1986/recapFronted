@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BrandResponseModel } from '../models/brandResponseModel';
 import { environment } from 'src/environments/environment';
-import { CarResponseModel } from '../models/carResponseModel';
+import { CarsDetailsResponseModel } from '../models/carsDetailsResponseModel';
 
 
 @Injectable({
@@ -16,7 +16,7 @@ export class BrandService {
   getBrands(): Observable<BrandResponseModel>{
     return this.httpClient.get<BrandResponseModel>(this.apiURL);
   }
-  getCarsByBrandId(brandId: number): Observable<CarResponseModel>{
-    return this.httpClient.get<CarResponseModel>(environment.apiURL + 'Brands/getcars?brandId=' + brandId);
+  getCarsByBrandId(brandId: number): Observable<CarsDetailsResponseModel>{
+    return this.httpClient.get<CarsDetailsResponseModel>(environment.apiURL + 'Brands/getcars?brandId=' + brandId);
   }
 }

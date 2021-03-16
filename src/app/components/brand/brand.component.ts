@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Brand } from 'src/app/models/brand';
-import { Car } from 'src/app/models/car';
+import { CarDetails } from 'src/app/models/carDetailsModel';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { BrandService } from 'src/app/services/brand.service';
 
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
-  cars: Car[] = [];
+  cars: CarDetails[] = [];
   dataLoaded = false;
 
   constructor(private brandService: BrandService, private activatedRoute: ActivatedRoute) { }

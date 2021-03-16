@@ -19,7 +19,7 @@ dataLoaded = false;
   }
 
   getCar(){
-    this.carService.getCar().subscribe(response => {
+    this.carService.getCars().subscribe(response => {
       console.log(response.data);
       this.cars = response.data,
       this.dataLoaded = true;

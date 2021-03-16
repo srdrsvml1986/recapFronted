@@ -15,6 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RentalComponent,
     HeaderComponent,
     PageNotFoundComponent,
-    SideBarComponent
-  ],
+    SideBarComponent,
+    CarDetailsComponent,
+    HomeComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
